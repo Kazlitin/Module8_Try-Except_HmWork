@@ -1,14 +1,11 @@
 def add_everything_up(a, b):
-    # Проверяю типы аргументов
-    if isinstance(a, str) and isinstance(b, str):
+    try:
         return a + b
-    elif isinstance(a, (int, float)) and isinstance(b, (int, float)):
-        return a + b
-    else:
+    except TypeError as e:
+        # Если возникла ошибка типа, значит a и b разных типов
+        # Возвращаю строковое представление этих двух данных вместе
         return f"{a} {b}"
-
-print(add_everything_up("Hello", "World"))
-print(add_everything_up(10, 20))
-print(add_everything_up("10", "20"))
-print(add_everything_up(10, "20"))
-print(add_everything_up("10", 20))
+print(add_everything_up(1, 2))  # Выведет: 3
+print(add_everything_up("Hello", "World"))  # Выведет: "Hello World"
+print(add_everything_up(1, "World"))  # Выведет: "1 World"
+print(add_everything_up("Hello", 2))  # Выведет: "Hello 2"
