@@ -1,11 +1,13 @@
 def add_everything_up(a, b):
     try:
+        # Попытка сложить a и b как числа
         return a + b
-    except TypeError as error:
+    except TypeError:
         # Если возникла ошибка типа, значит a и b разных типов
-        # Возвращаю строковое представление этих двух данных вместе
+        # Возвращаем строковое представление этих двух данных вместе
         return f"{a} {b}"
-print(add_everything_up(1, 2))  # Выведет: 3
-print(add_everything_up("Hello", "World"))  # Выведет: "Hello World"
-print(add_everything_up(1, "World"))  # Выведет: "1 World"
-print(add_everything_up("Hello", 2))  # Выведет: "Hello 2"
+
+# Примеры использования функции
+print(add_everything_up(123.456,'строка'))
+print(add_everything_up('яблоко',4215))
+print(add_everything_up(123.456, 7))
